@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>Compound Interest Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,36 +17,17 @@
 
 <body>
     <header>
-        <div class="logo">Simple Calculator.</div>
+        <div class="logo">Compound-Interest Calculator.</div>
         <div class="imageSection center" id="menuBtn">
             <img src="../images/menu-icon.svg" alt="">
         </div>
     </header>
 
     <main>
-        <input type="text" id="display" readonly>
-        <div id="keys">
-            <div class="key center simpleKeys">7</div>
-            <div class="key center simpleKeys">8</div>
-            <div class="key center simpleKeys">9</div>
-            <div class="key center clearKeys">C</div>
-            <div class="key center simpleKeys">4</div>
-            <div class="key center simpleKeys">5</div>
-            <div class="key center simpleKeys">6</div>
-            <div class="key center simpleKeys">+</div>
-            <div class="key center simpleKeys">1</div>
-            <div class="key center simpleKeys">2</div>
-            <div class="key center simpleKeys">3</div>
-            <div class="key center simpleKeys">-</div>
-            <div class="key center simpleKeys">.</div>
-            <div class="key center simpleKeys">0</div>
-            <div class="key center simpleKeys">/</div>
-            <div class="key center simpleKeys">*</div>
-        </div>
-        <div id="lastKeys">
-            <div class="key center clearKeys">RESET</div>
-            <div class="key center" id="calculateKey">=</div>
-        </div>
+        <label for="investment" id="investment">
+            Initial Investment
+            <input type="text" placeholder="Enter Amount...">
+        </label>
     </main>
 
     <div id="menu">
@@ -59,8 +40,8 @@
             </div>
     
             <div class="menuLists">
-                <a href="index.html" class="menuItems">Calculator</a>
-                <a href="../Compound-Interest-Calculator/index.html" class="menuItems">Compound Interest Calculator</a>
+                <a href="../Simple-Calculator/index.html" class="menuItems">Calculator</a>
+                <a href="index.html" class="menuItems">Compound Interest Calculator</a>
                 <a href="" class="menuItems">Simple Interest Calculator</a>
                 <a href="" class="menuItems">Percentage Calculator</a>
                 <a href="" class="menuItems">GPA Calculator</a>

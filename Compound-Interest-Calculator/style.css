@@ -139,13 +139,13 @@ main {
 }
 
 #menu{
+    /* background-color: rgba(28, 28, 28, 0.507); */
     width: 100%;
     height: 100vh;
     position: absolute;
     display: flex;
     justify-content: end;
     z-index: -1;
-    overflow: hidden;
 
     #menuContainer{
         background-color: var(--defaultColor);
@@ -189,53 +189,5 @@ main {
                 }
             }
         }
-    }
-}
-
-@media(max-width: 1025px) and (min-width: 850px) {
-    header {
-        padding: 15px 45px;
-        margin-bottom: 30px;
-    
-        .logo {
-            font-size: 20px;
-        }
-    
-        .imageSection {
-            width: 25px;
-        }
-    }
-
-    main {
-        width: 40%;
-    }
-}
-
-@media (max-width: 850px) {
-    header {
-        padding: 10px 40px;
-        margin-bottom: 30px;
-        top: 20px;
-    
-        .logo {
-            font-size: 20px;
-        }
-    
-        .imageSection {
-            width: 25px;
-        }
-    }
-
-    main {
-        width: 100%;
-        margin-top: 50px;
-    }
-
-    #keys {
-        gap: 10px;
-    }
-
-    .key{
-        
     }
 }
