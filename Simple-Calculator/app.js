@@ -40,7 +40,9 @@ menuBtn.addEventListener("click", () => {
 
 //Close menu when crossBtn is clicked...
 crossBtn.addEventListener("click", () => {
+    menuContainer.style.transform = "translateX(600px)"; 
     menu.style.backgroundColor = "transparent";
-    menuContainer.style.transform = "translateX(500px)"; 
-    menu.style.zIndex = "-1";
+    setTimeout(() => {
+        menu.style.zIndex = "-1";
+    }, 1000);
 });

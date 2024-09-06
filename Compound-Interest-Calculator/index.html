@@ -24,10 +24,40 @@
     </header>
 
     <main>
-        <label for="investment" id="investment">
-            Initial Investment
-            <input type="text" placeholder="Enter Amount...">
-        </label>
+        <div class="calculator">
+            <div class="center" id="display"></div>
+
+            <form>
+                <div class="inputSection">
+                    <label for="investment">Initial Investment:</label>
+                    <input type="number" id="investment" placeholder="Enter Amount..." required>
+                </div>
+                <div class="inputSection">
+                    <label for="rate">Annual Rate:</label>
+                    <input type="number" id="rate" placeholder="Enter Rate..." required>
+                </div>
+                <div class="inputSection">
+                    <label for="time">Time:</label>
+                    <input type="number" id="time" placeholder="Enter Time...">
+                </div>
+                <div class="inputSection">
+                    <label for="compound">Compound:</label>
+                    <select name="compoundType" id="compound">
+                        <option value="yealy">Yearly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="daily">Daily</option>
+                    </select>
+                </div>
+
+                <div class="buttonSection">
+                    <input type="reset" value="Clear" id="clearBtn">
+                    <input type="submit" value="Calculate" id="calculateBtn">
+                </div>
+            </form>
+        </div>
+
     </main>
 
     <div id="menu">
@@ -38,7 +68,7 @@
                     <img src="../images/cross-icon.svg" alt="">
                 </div>
             </div>
-    
+
             <div class="menuLists">
                 <a href="../Simple-Calculator/index.html" class="menuItems">Calculator</a>
                 <a href="index.html" class="menuItems">Compound Interest Calculator</a>
@@ -53,9 +83,9 @@
                 <a href="" class="menuItems">Height Conversion</a>
                 <a href="" class="menuItems">Weight Conversion</a>
             </div>
-        </div> 
+        </div>
     </div>
-    
+
 </body>
 
 </html>

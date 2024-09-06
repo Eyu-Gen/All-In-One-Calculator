@@ -34,14 +34,10 @@ body {
     background-color: var(--lightColor);
     user-select: none;
     max-width: 1550px;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
 }
 
 header {
@@ -52,8 +48,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 30px 70px;
-    position: absolute;
-    top: 0;
     margin-bottom: 30px;
 
     .logo {
@@ -67,93 +61,114 @@ header {
 }
 
 main {
-    width: 30%;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
     padding: 20px;
     font-family: var(--fontFamily);
+}
+
+.calculator{
+    width: 40%;
 }
 
 #display {
     color: white;
     width: 100%;
-    height: 20%;
+    height: 120px;
     border: none;
     outline: none;
     border-radius: 10px;
     background-color: var(--darkColor);
     padding: 20px;
-    text-align: end;
-    font-size: 40px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin-bottom: 50px;
-}
-
-#keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.key {
-    aspect-ratio: 16/10;
     font-size: 25px;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px var(--darkColor);
-    cursor: pointer;
+    margin-bottom: 30px;
+    justify-content: start;
+}
 
-    &:hover{
-        opacity: 80%;
+form{
+    color: white;
+
+    .inputSection{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+
+        label{
+            color: var(--primaryColor);
+            font-size: 25px;
+        }
+
+        select,
+        input{
+            width: 50%;
+            border: none;
+            border-radius: 10px;
+            height: 40px;
+            padding: 0px 10px;
+            font-weight: bold;
+
+            &::placeholder{
+                font-family: var(--fontFamily);
+                color: var(--veryLighrColor);
+                font-weight: 500;
+            }
+
+            &:focus{
+                outline: none;
+            }
+        }
     }
 
-    &:active{
-        opacity: 100%;
-    }
-}
+    .buttonSection{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        margin-top: 50px;
 
-.simpleKeys {
-    background-color: var(--defaultColor);
-}
+        input{
+            width: 50%;
+            height: 50px;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-family: var(--fontFamily);
+            cursor: pointer;
+        }
 
-.clearKeys {
-    background-color: var(--primaryColor);
-    color: var(--defaultColor);
-}
+        #clearBtn{
+            background-color: var(--primaryColor);
+        }
 
-#calculateKey {
-    background-color: var(--secondaryColor);
-    color: var(--defaultColor);
-}
-
-#lastKeys {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 20px;
-
-    .key {
-        width: 50%;
-        aspect-ratio: 16/5;
+        #calculateBtn{
+            background-color: var(--secondaryColor);
+        }
     }
 }
 
 #menu{
-    /* background-color: rgba(28, 28, 28, 0.507); */
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
+    overflow: hidden;
     display: flex;
     justify-content: end;
     z-index: -1;
+    top: 0;
 
     #menuContainer{
         background-color: var(--defaultColor);
         width: 30%;
+        height: 100%;
         font-family: var(--fontFamily);
         padding: 20px;
-        height: 100vh;
-        transform: translateX(500px); 
+        transform: translateX(600px); 
         transition: transform 0.5s linear;
     
         .header{
@@ -188,6 +203,94 @@ main {
                     color: var(--veryLighrColor);
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 1025px) and (min-width: 550px) {
+    header {
+        padding: 15px 45px;
+        margin-bottom: 30px;
+    
+        .logo {
+            font-size: 20px;
+        }
+    
+        .imageSection {
+            width: 25px;
+        }
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .calculator{
+        width: 60%;
+    }
+
+    #menu{
+        width: 100%;
+        height: 100%;
+
+        #menuContainer{
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        top: 20px;
+    
+        .logo {
+            font-size: 15px;
+            width: 60%;
+        }
+    
+        .imageSection {
+            width: 25px;
+        }
+    }
+
+    main {
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 0px;
+    }
+
+    .calculator{
+        width: 100%;
+
+        #display{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        form{
+            .inputSection{
+                label{
+                    font-size: 15px;
+                }
+
+                select,
+                input{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #menu{
+        width: 100%;
+        height: 100%;
+
+        #menuContainer{
+            width: 100%;
+            padding: 20px;
         }
     }
 }
