@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compound Interest Calculator</title>
+    <title>Simple Interest Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <div class="logo">Compound-Interest Calculator.</div>
+        <div class="logo">Simple-Interest Calculator.</div>
         <div class="imageSection center" id="menuBtn">
             <img src="../images/menu-icon.svg" alt="">
         </div>
@@ -29,26 +29,26 @@
 
             <form>
                 <div class="inputSection">
-                    <label for="investment">Initial Investment:</label>
+                    <label for="investment">Principle:</label>
                     <input type="number" id="investment" placeholder="Enter Amount..." required>
                 </div>
                 <div class="inputSection">
-                    <label for="rate">Annual Rate:</label>
+                    <label for="rate">Interest Rate:</label>
                     <input type="number" id="rate" placeholder="Enter Rate..." required>
                 </div>
                 <div class="inputSection">
-                    <label for="time">Time:</label>
-                    <input type="number" id="time" placeholder="Enter Time...">
-                </div>
-                <div class="inputSection">
-                    <label for="compound">Compound:</label>
-                    <select name="compoundType" id="compound">
-                        <option value="yealy">Yearly</option>
+                    <label for="ratefor">Interest Rate Per:</label>
+                    <select name="ratefor" id="ratefor">
+                        <option value="yearly">Yearly</option>
                         <option value="quarterly">Quarterly</option>
                         <option value="monthly">Monthly</option>
                         <option value="weekly">Weekly</option>
                         <option value="daily">Daily</option>
                     </select>
+                </div>
+                <div class="inputSection">
+                    <label for="time">Time:</label>
+                    <input type="number" id="time" placeholder="Enter Time...">
                 </div>
 
                 <div class="buttonSection">
@@ -71,8 +71,8 @@
 
             <div class="menuLists">
                 <a href="../index.html" class="menuItems">Calculator</a>
-                <a href="index.html" class="menuItems">Compound Interest Calculator</a>
-                <a href="../Simple-Interest-Calculator/index.html" class="menuItems">Simple Interest Calculator</a>
+                <a href="../Compound-Interest-Calculator/index.html" class="menuItems">Compound Interest Calculator</a>
+                <a href="index.html" class="menuItems">Simple Interest Calculator</a>
                 <a href="" class="menuItems">Percentage Calculator</a>
                 <a href="" class="menuItems">GPA Calculator</a>
                 <a href="" class="menuItems">Date Calculator</a>
