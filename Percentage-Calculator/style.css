@@ -34,7 +34,7 @@ body {
     background-color: var(--lightColor);
     user-select: none;
     max-width: 1550px;
-    height: fit-content;
+    min-height: 100vh;
     margin: 0 auto;
     flex-direction: column;
     position: relative;
@@ -71,7 +71,7 @@ main {
     font-family: var(--fontFamily);
 }
 
-.calculator{
+.calculator {
     width: 40%;
 }
 
@@ -89,70 +89,87 @@ main {
     justify-content: start;
 }
 
-form{
+form {
     color: white;
 
-    .inputSection{
+    .inputSection {
         display: flex;
         flex-direction: column;
         gap: 5px;
         margin-bottom: 20px;
 
-        label{
+        label {
             color: var(--primaryColor);
             font-size: 25px;
         }
 
         select,
-        input{
-            width: 50%;
+        input {
+            width: 100%;
             border: none;
             border-radius: 10px;
             height: 40px;
             padding: 0px 10px;
             font-weight: bold;
 
-            &::placeholder{
+            &::placeholder {
                 font-family: var(--fontFamily);
                 color: var(--veryLighrColor);
                 font-weight: 500;
             }
 
-            &:focus{
+            &:focus {
                 outline: none;
             }
         }
     }
 
-    .buttonSection{
-        width: 100%;
-        display: flex;
+    #operationSection{
+        align-items: end;
+        flex-direction: row;
         gap: 20px;
-        margin-top: 50px;
-
-        input{
-            width: 50%;
-            height: 50px;
-            border-radius: 20px;
-            border: none;
-            color: white;
-            font-size: 20px;
-            letter-spacing: 1px;
-            font-family: var(--fontFamily);
-            cursor: pointer;
+        
+        #chooseBtnSection{
+            margin-top: 0;
         }
+    }
 
-        #clearBtn{
-            background-color: var(--primaryColor);
-        }
+    .requiredContainer{
+        display: none;        
+    }
 
-        #calculateBtn{
-            background-color: var(--secondaryColor);
-        }
+}
+
+.buttonSection {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+
+    input {
+        width: 50%;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-family: var(--fontFamily);
+        cursor: pointer;
+    }
+
+    .clearBtn {
+        background-color: var(--primaryColor);
+    }
+
+    .submitBtn {
+        background-color: var(--secondaryColor);
     }
 }
 
-#menu{
+
+
+#menu {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -162,45 +179,45 @@ form{
     z-index: -1;
     top: 0;
 
-    #menuContainer{
+    #menuContainer {
         background-color: var(--defaultColor);
         width: 30%;
         height: 100%;
         font-family: var(--fontFamily);
         padding: 20px;
-        transform: translateX(700px); 
+        transform: translateX(700px);
         transition: transform 0.5s linear;
-    
-        .header{
+
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
-    
-            .menuHeading{
+
+            .menuHeading {
                 font-size: 30px;
                 font-weight: bold;
                 color: var(--primaryColor);
                 text-decoration: underline;
             }
-    
-            .imageSection{
+
+            .imageSection {
                 width: 30px;
             }
         }
-    
-        .menuLists{
+
+        .menuLists {
             display: flex;
             flex-direction: column;
             gap: 15px;
             font-size: 20px;
 
-            .menuItems{
+            .menuItems {
                 color: black;
                 text-decoration: none;
                 transition: color 0.2s linear;
 
-                &:hover{
+                &:hover {
                     color: var(--veryLighrColor);
                 }
             }
@@ -209,18 +226,18 @@ form{
 }
 
 @media(max-width: 1200px) and (min-width: 550px) {
-    body{
-        height: 100vh;
+    body {
+        min-height: 100vh;
     }
 
     header {
         padding: 15px 45px;
         margin-bottom: 30px;
-    
+
         .logo {
             font-size: 20px;
         }
-    
+
         .imageSection {
             width: 25px;
         }
@@ -230,26 +247,26 @@ form{
         width: 100%;
     }
 
-    .calculator{
+    .calculator {
         width: 60%;
     }
 
-    #menu{
-        #menuContainer{
+    #menu {
+        #menuContainer {
             width: 50%;
 
-            .header{
-                .menuHeading{
+            .header {
+                .menuHeading {
                     font-size: 25px;
                 }
             }
-            
+
         }
     }
 }
 
 @media (max-width: 550px) {
-    body{
+    body {
         height: 100vh;
     }
 
@@ -257,12 +274,12 @@ form{
         padding: 10px 20px;
         margin-bottom: 10px;
         top: 20px;
-    
+
         .logo {
             font-size: 15px;
             width: 60%;
         }
-    
+
         .imageSection {
             width: 25px;
         }
@@ -274,37 +291,37 @@ form{
         padding-top: 0px;
     }
 
-    .calculator{
+    .calculator {
         width: 100%;
 
-        #display{
+        #display {
             margin-top: 0px;
             margin-bottom: 10px;
             font-size: 20px;
         }
 
-        form{
-            .inputSection{
-                label{
+        form {
+            .inputSection {
+                label {
                     font-size: 15px;
                 }
 
                 select,
-                input{
+                input {
                     width: 100%;
                 }
             }
         }
     }
 
-    #menu{
-        #menuContainer{
-            .header{
-                .menuHeading{
+    #menu {
+        #menuContainer {
+            .header {
+                .menuHeading {
                     font-size: 25px;
                 }
             }
-            
+
             width: 100%;
             padding: 20px;
         }

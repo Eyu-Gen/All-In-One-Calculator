@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="images/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Percentage Calculator.</div>
+        <div class="imageSection center" id="menuBtn">
+            <img src="../images/menu-icon.svg" alt="">
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator">
+            <div class="center" id="display"></div>
+
+            <form>
+                <div class="inputSection center" id="operationSection">
+                    <label for="operation">What do you want?
+                    <select name="operation" id="operation">
+                        <option value="default" disabled selected>Choose</option>
+                        <option value="perOfNum">Calculates the result of a percentage of base number.</option>
+                        <option value="whatPer">Find the percentage from result and base number.</option>
+                        <option value="mainNum">Calculate the base number from percentage and result</option>
+                    </select>
+                    </label>
+
+                    <div class="buttonSection center" id="chooseBtnSection">
+                        <input type="submit" value="choose" id="chooseBtn" class="submitBtn">
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="requiredContainer" id="perOfNum">
+                    <div class="inputSection">
+                        <label for="number">Number:</label>
+                        <input type="number" class="perOfNumInputs" id="number" placeholder="Enter Number..." required>
+                    </div>
+                    <div class="inputSection">
+                        <label for="percentage">Percentage:</label>
+                        <input type="number" class="perOfNumInputs" id="percentage" placeholder="Enter Percentage..." required>
+                    </div> 
+
+                    <div class="buttonSection" id="perOfNumBtnSection">
+                        <input type="reset" value="Clear" id="clearBtn" class="clearBtn">
+                        <input type="submit" value="Calculate" id="perOfNumBtn" class="submitBtn">
+                    </div>
+                </div>                             
+            </form>
+
+            <form>
+                <div class="requiredContainer" id="whatPer">
+                    <div class="inputSection">
+                        <label for="result">Result:</label>
+                        <input type="number" class="whatPerInputs" id="result" placeholder="Enter Result..." required>
+                    </div>
+                    <div class="inputSection">
+                        <label for="baseNum">Base Number:</label>
+                        <input type="number" class="whatPerInputs" id="baseNum" placeholder="Enter Base Number..." required>
+                    </div> 
+
+                    <div class="buttonSection" id="whatPerBtnSection">
+                        <input type="reset" value="Clear" id="clearBtn" class="clearBtn">
+                        <input type="submit" value="Calculate" id="whatPerBtn" class="submitBtn">
+                    </div>
+                </div>                             
+            </form>
+
+            <form>
+                <div class="requiredContainer" id="mainNum">
+                    <div class="inputSection">
+                        <label for="result">Result:</label>
+                        <input type="number" class="mainInputs" id="result" placeholder="Enter Result..." required>
+                    </div>
+                    <div class="inputSection">
+                        <label for="percentage">Percentage:</label>
+                        <input type="number" class="mainInputs" id="percentage" placeholder="Enter Base Number..." required>
+                    </div> 
+
+                    <div class="buttonSection" id="mainNumBtnSection">
+                        <input type="reset" value="Clear" id="clearBtn" class="clearBtn">
+                        <input type="submit" value="Calculate" id="mainNumBtn" class="submitBtn">
+                    </div>
+                </div>                             
+            </form>
+        </div>
+
+    </main>
+
+    <div id="menu">
+        <div id="menuContainer">
+            <div class="header">
+                <div class="menuHeading">All in one - Calculators</div>
+                <div class="imageSection" id="crossBtn">
+                    <img src="../images/cross-icon.svg" alt="">
+                </div>
+            </div>
+
+            <div class="menuLists">
+                <a href="../index.html" class="menuItems">Calculator</a>
+                <a href="../Compound-Interest-Calculator/index.html" class="menuItems">Compound Interest Calculator</a>
+                <a href="../Simple-Interest-Calculator/index.html" class="menuItems">Simple Interest Calculator</a>
+                <a href="index.html" class="menuItems">Percentage Calculator</a>
+                <a href="" class="menuItems">GPA Calculator</a>
+                <a href="" class="menuItems">Date Calculator</a>
+                <a href="" class="menuItems">Time Calculator</a>
+                <a href="" class="menuItems">Love Calculator</a>
+                <a href="" class="menuItems">Temperature Conversion</a>
+                <a href="" class="menuItems">Age Calculator</a>
+                <a href="" class="menuItems">Height Conversion</a>
+                <a href="" class="menuItems">Weight Conversion</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+</body>
+
+</html>

@@ -181,6 +181,7 @@ form{
                 font-size: 30px;
                 font-weight: bold;
                 color: var(--primaryColor);
+                text-decoration: underline;
             }
     
             .imageSection{
@@ -235,6 +236,12 @@ form{
 
         #menuContainer{
             width: 50%;
+
+            .header{
+                .menuHeading{
+                    font-size: 25px;
+                }
+            }
         }
     }
 }
@@ -291,6 +298,12 @@ form{
         #menuContainer{
             width: 100%;
             padding: 20px;
+
+            .header{
+                .menuHeading{
+                    font-size: 25px;
+                }
+            }
         }
     }
 }

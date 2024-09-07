@@ -166,6 +166,7 @@ main {
                 font-size: 30px;
                 font-weight: bold;
                 color: var(--primaryColor);
+                text-decoration: underline;
             }
     
             .imageSection{
@@ -215,6 +216,12 @@ main {
 
         #menuContainer{
             width: 50%;
+
+            .header{
+                .menuHeading{
+                    font-size: 25px;
+                }
+            }
         }
     }
 }
@@ -245,6 +252,12 @@ main {
     #menu{
         #menuContainer{
             width: 100%;
+
+            .header{
+                .menuHeading{
+                    font-size: 25px;
+                }
+            }
         }
     }
 }
