@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Interest Calculator</title>
+    <title>GPA Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <div class="logo">Simple-Interest Calculator.</div>
+        <div class="logo">GPA Calculator.</div>
         <div class="imageSection center" id="menuBtn">
             <img src="../images/menu-icon.svg" alt="">
         </div>
@@ -28,27 +28,33 @@
             <div class="center" id="display"></div>
 
             <form>
-                <div class="inputSection">
-                    <label for="investment">Principle:</label>
-                    <input type="number" id="investment" placeholder="Enter Amount..." required>
+                <div class="headingSection">
+                    <p class="heading">Subjects</p>
+                    <p class="heading">Credit</p>
+                    <p class="heading">GPA</p>
                 </div>
+
                 <div class="inputSection">
-                    <label for="rate">Interest Rate:</label>
-                    <input type="number" id="rate" placeholder="Enter Rate..." required>
+                    <input type="text" class="subjectName" placeholder="Subject...">
+                    <input type="number" class="credit" placeholder="Credit...">
+                    <input type="number" class="gpa" placeholder="GPA...">
                 </div>
+
                 <div class="inputSection">
-                    <label for="ratefor">Interest Rate Per:</label>
-                    <select name="ratefor" id="ratefor">
-                        <option value="yearly">Yearly</option>
-                        <option value="quarterly">Quarterly</option>
-                        <option value="monthly">Monthly</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="daily">Daily</option>
-                    </select>
+                    <input type="text" class="subjectName" placeholder="Subject...">
+                    <input type="number" class="credit" placeholder="Credit...">
+                    <input type="number" class="gpa" placeholder="GPA...">
                 </div>
+
+                <div id="additionalSection"></div>
+                
                 <div class="inputSection">
-                    <label for="time">Time:</label>
-                    <input type="number" id="time" placeholder="Enter Time...">
+                    <button id="addSubjectBtn" class="center">
+                        <div class="imageSection center">
+                            <img src="../images/plus.svg" alt="">
+                        </div>
+                        Add more Subjects
+                    </button>
                 </div>
 
                 <div class="buttonSection">
@@ -72,9 +78,9 @@
             <div class="menuLists">
                 <a href="../index.html" class="menuItems">Calculator</a>
                 <a href="../Compound-Interest-Calculator/index.html" class="menuItems">Compound Interest Calculator</a>
-                <a href="index.html" class="menuItems">Simple Interest Calculator</a>
+                <a href="../Simple-Interest-Calculator/index.html" class="menuItems">Simple Interest Calculator</a>
                 <a href="../Percentage-Calculator/index.html" class="menuItems">Percentage Calculator</a>
-                <a href="../GPA-Calculator/index.html" class="menuItems">GPA Calculator</a>
+                <a href="index.html" class="menuItems">GPA Calculator</a>
                 <a href="" class="menuItems">Date Calculator</a>
                 <a href="" class="menuItems">Time Calculator</a>
                 <a href="" class="menuItems">Love Calculator</a>
