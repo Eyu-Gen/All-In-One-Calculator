@@ -5,18 +5,19 @@ const menuContainer = document.getElementById("menuContainer");
 const menuBtn = document.getElementById("menuBtn");
 const crossBtn = document.getElementById("crossBtn");
 const addSubjectBtn = document.getElementById("addSubjectBtn");
-const inputs = document.querySelectorAll('input');
 const additionalSection = document.getElementById("additionalSection");
 
 
 //Calculate when calculateBtn clicked...
-if (inputs.length > 0) {
-    calculateBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        const credits = document.getElementsByClassName("credit");
-        const gpas = document.getElementsByClassName("gpa");
+calculateBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const inputs = document.querySelectorAll('input[type="number"]');
+    if (inputs.length > 0) {
+        const creditTheory = document.getElementsByClassName("creditTheory");
+        const creditPractical = document.getElementsByClassName("creditPractical");
+        const gpaTheory = document.getElementsByClassName("gpaTheory");
+        const gpaPractical = document.getElementsByClassName("gpaPractical");
         let validInputs = true;
-        let totalGradePoint = 0;
 
         inputs.forEach(input => {
             if (input.value === "") {
@@ -25,24 +26,22 @@ if (inputs.length > 0) {
         });
 
         if (validInputs) {
-            const creditSum = calculateTotal(credits);
-            console.log(creditSum);
-            for (let i = 0; i < credits.length; i++) {
-                totalGradePoint += (Number(credits[i].value) * Number(gpas[i].value));
-            }
-            console.log(totalGradePoint);
-
-            const totalGPA = totalGradePoint / creditSum;
+            const theorySum = muntiply(creditTheory, gpaTheory);
+            const praticalSum = muntiply(creditPractical, gpaPractical);
+            const totalGradePoint = sum(theorySum, praticalSum);
+            const totalCredit = sum(creditPractical, creditTheory);
+            const totalGPA = totalGradePoint / totalCredit;
+            
             display.innerHTML = `GPA = ${totalGPA.toFixed(2)}`;
+            display.style.backgroundColor = "var(--secondaryColor)";
         } else {
             display.innerHTML = "Error!!";
             display.style.backgroundColor = "var(--primaryColor)";
         }
-    });
-} else {
+    } else {
     display.innerHTML = "Error!!";
     display.style.backgroundColor = "var(--primaryColor)";
-}
+}});
 
 //Add new block to add subjects when addSubjectBtn clicked...
 addSubjectBtn.addEventListener("click", (event) => {
@@ -59,20 +58,35 @@ addSubjectBtn.addEventListener("click", (event) => {
     subjectName.setAttribute("placeholder", "Subject...");
     subjectBox.appendChild(subjectName);
 
-    // Credit Input
-    let credit = document.createElement("input");
-    credit.classList.add("credit");
-    credit.setAttribute("type", "number");
-    credit.setAttribute("placeholder", "Credit...");
-    subjectBox.appendChild(credit);
+    // Credit theory Input
+    let creditTheory = document.createElement("input");
+    creditTheory.classList.add("creditTheory");
+    creditTheory.setAttribute("type", "number");
+    creditTheory.setAttribute("placeholder", "Credit...");
+    subjectBox.appendChild(creditTheory);
+    
+    // Credit practical Input
+    let creditPractical = document.createElement("input");
+    creditPractical.classList.add("creditPractical");
+    creditPractical.setAttribute("type", "number");
+    creditPractical.setAttribute("placeholder", "Credit...");
+    subjectBox.appendChild(creditPractical);
 
-    // GPA Input
-    let gpa = document.createElement("input");
-    gpa.classList.add("gpa");
-    gpa.setAttribute("type", "number");
-    gpa.setAttribute("placeholder", "GPA...");
-    gpa.setAttribute("step", "0.01"); // allows decimal values for GPA
-    subjectBox.appendChild(gpa);
+    // GPA theory Input
+    let gpaTheory = document.createElement("input");
+    gpaTheory.classList.add("gpaTheory");
+    gpaTheory.setAttribute("type", "number");
+    gpaTheory.setAttribute("placeholder", "GPA...");
+    gpaTheory.setAttribute("step", "0.01"); 
+    subjectBox.appendChild(gpaTheory);
+   
+    // GPA practical Input
+    let gpaPractical = document.createElement("input");
+    gpaPractical.classList.add("gpaPractical");
+    gpaPractical.setAttribute("type", "number");
+    gpaPractical.setAttribute("placeholder", "GPA...");
+    gpaPractical.setAttribute("step", "0.01"); 
+    subjectBox.appendChild(gpaPractical);
 });
 
 
@@ -99,11 +113,25 @@ crossBtn.addEventListener("click", () => {
     }, 1000);
 });
 
-//Addition function...
-function calculateTotal(operands) {
+// Muntiply function...
+function muntiply(operand1, operand2) {
+    let total = 0;
+    for(let i = 0; i < operand1.length; i++) {
+        total += (Number(operand1[i].value) * Number(operand2[i].value));
+    };
+    return total;
+};
+
+//Sum function...
+function sum(operand1, operand2) {
     let sum = 0;
-    Array.from(operands).forEach(operand => {
-        sum += Number(operand.value);
-    });
-    return sum;
-}
+
+    if (isNaN(operand1)) {
+        for (let i = 0; i < operand1.length; i++) {
+            sum += (Number(operand1[i].value) + Number(operand2[i].value));
+        }
+        return sum;
+    } else {
+        return (operand1 + operand2);
+    }
+};
