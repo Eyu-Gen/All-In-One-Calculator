@@ -60,136 +60,22 @@ header {
 
 main {
     width: 100%;
-    height: 500px;
     padding: 20px;
     font-family: var(--fontFamily);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.calculator{
-    width: 30%;
-}
-
-#display {
-    color: white;
-    width: 100%;
-    height: 20%;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background-color: var(--darkColor);
-    padding: 20px;
-    text-align: end;
-    font-size: 40px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin-bottom: 50px;
-}
-
-#keys {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: auto auto auto;
+    border: 1px solid red;
 }
 
-.key {
-    aspect-ratio: 16/10;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px var(--darkColor);
-    cursor: pointer;
-
-    &:hover{
-        opacity: 80%;
-    }
-
-    &:active{
-        opacity: 100%;
-    }
-}
-
-.simpleKeys {
-    background-color: var(--defaultColor);
-}
-
-.clearKeys {
-    background-color: var(--primaryColor);
-    color: var(--defaultColor);
-}
-
-#calculateKey {
-    background-color: var(--secondaryColor);
-    color: var(--defaultColor);
-}
-
-#lastKeys {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 20px;
-
-    .key {
-        width: 50%;
-        aspect-ratio: 16/5;
-    }
-}
-
-#menu{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    display: flex;
-    justify-content: end;
-    z-index: -1;
-    overflow: hidden;
-    top: 0;
-
-    #menuContainer{
-        background-color: var(--defaultColor);
-        width: 30%;
-        font-family: var(--fontFamily);
-        padding: 20px;
-        height: 100vh;
-        transform: translateX(600px); 
-        transition: transform 0.5s linear;
+.container{
+    border: 1px solid red;
+    width: 70%;
+    height: 350px;
     
-        .header{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
-    
-            .menuHeading{
-                font-size: 30px;
-                font-weight: bold;
-                color: var(--primaryColor);
-                text-decoration: underline;
-            }
-    
-            .imageSection{
-                width: 30px;
-            }
-        }
-    
-        .menuLists{
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            font-size: 20px;
-
-            .menuItems{
-                color: black;
-                text-decoration: none;
-                transition: color 0.2s linear;
-
-                &:hover{
-                    color: var(--veryLighrColor);
-                }
-            }
-        }
+    .imageSection{
+        border: 1px solid red;
+        width: 100%;
+        height: 80%;
     }
 }
 
