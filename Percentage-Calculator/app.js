@@ -2,6 +2,7 @@ const chooseBtn = document.getElementById("chooseBtn");
 const clearBtns = document.getElementsByClassName("clearBtn");
 const menu = document.getElementById("menu");
 const menuContainer = document.getElementById("menuContainer");
+const homeBtn = document.getElementById("homeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const crossBtn = document.getElementById("crossBtn");
 const chooseBtnSection = document.getElementById("chooseBtnSection");
@@ -82,6 +83,11 @@ Array.from(clearBtns).forEach(clearBtn => {
         display.style.backgroundColor = "var(--darkColor)";
         display.innerHTML = "";
     });
+});
+
+//Redirect to home page when home icon is clicked...
+homeBtn.addEventListener("click", () => {
+    window.location.href = `../index.html`;
 });
 
 //Slide menu when menuBtn is clicked...

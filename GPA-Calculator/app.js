@@ -2,6 +2,7 @@ const calculateBtn = document.getElementById("calculateBtn");
 const clearBtn = document.getElementById("clearBtn");
 const menu = document.getElementById("menu");
 const menuContainer = document.getElementById("menuContainer");
+const homeBtn = document.getElementById("homeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const crossBtn = document.getElementById("crossBtn");
 const addSubjectBtn = document.getElementById("addSubjectBtn");
@@ -89,12 +90,15 @@ addSubjectBtn.addEventListener("click", (event) => {
     subjectBox.appendChild(gpaPractical);
 });
 
-
-
 //Clear display when clearKeys are clicked...
 clearBtn.addEventListener("click", () => {
     display.style.backgroundColor = "var(--darkColor)";
     display.innerHTML = "";
+});
+
+//Redirect to home page when home icon is clicked...
+homeBtn.addEventListener("click", () => {
+    window.location.href = `../index.html`;
 });
 
 //Slide menu when menuBtn is clicked...

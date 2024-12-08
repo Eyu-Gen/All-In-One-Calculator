@@ -3,6 +3,7 @@ const clearBtn = document.getElementById("clearBtn");
 const menu = document.getElementById("menu");
 const menuContainer = document.getElementById("menuContainer");
 const menuBtn = document.getElementById("menuBtn");
+const homeBtn = document.getElementById("homeBtn");
 const crossBtn = document.getElementById("crossBtn");
 const inputs = document.querySelectorAll('input[type="number"]');
 let amount;
@@ -62,6 +63,11 @@ if (inputs.length > 0) {
 clearBtn.addEventListener("click", () => {
     display.style.backgroundColor = "var(--darkColor)";
     display.innerHTML = "";
+});
+
+//Redirect to home page when home icon is clicked...
+homeBtn.addEventListener("click", () => {
+    window.location.href = `../index.html`;
 });
 
 //Slide menu when menuBtn is clicked...
