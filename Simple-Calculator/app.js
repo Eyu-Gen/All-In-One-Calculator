@@ -5,6 +5,7 @@ const calculateKey = document.getElementById("calculateKey");
 const menu = document.getElementById("menu");
 const menuContainer = document.getElementById("menuContainer");
 const menuBtn = document.getElementById("menuBtn");
+const homeBtn = document.getElementById("homeBtn");
 const crossBtn = document.getElementById("crossBtn");
 
 //Keys display when clicked...
@@ -29,6 +30,11 @@ calculateKey.addEventListener("click", () => {
     } catch (error) {
         display.value = "ERROR!!";
     }
+});
+
+//Redirect to home page when home icon is clicked...
+homeBtn.addEventListener("click", () => {
+    window.location.href = `../index.html`;
 });
 
 //Slide menu when menuBtn is clicked...

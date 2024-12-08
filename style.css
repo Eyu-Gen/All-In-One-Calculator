@@ -26,7 +26,7 @@
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
@@ -60,22 +60,39 @@ header {
 
 main {
     width: 100%;
-    padding: 20px;
     font-family: var(--fontFamily);
     display: grid;
-    grid-template-columns: auto auto auto;
-    border: 1px solid red;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 0px 50px 50px 50px;
+    /* border: 1px solid red; */
 }
 
 .container{
-    border: 1px solid red;
-    width: 70%;
-    height: 350px;
+    /* border: 1px solid red; */
+    aspect-ratio: 3/2;
+    background-color: var(--darkColor);
+    border-radius: 20px;
+    color: var(--defaultColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
     
     .imageSection{
-        border: 1px solid red;
+        /* border: 1px solid red; */
+        padding: 0px 20px 0px 20px;
         width: 100%;
-        height: 80%;
+        height: 100%;
+        transition: transform 0.2s linear;
+    }
+
+    &:hover{
+        .imageSection{
+            transform: scale(1.1);
+        }
     }
 }
 
