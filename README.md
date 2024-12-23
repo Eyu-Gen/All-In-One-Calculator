@@ -1,4 +1,4 @@
-**All-in-One Calculator**
+*All-in-One Calculator* <br>
 This combination of calculators can perform simple arithmetic calculations, and calculate simple interest, compound interest, percentage, and GPA. The application is built using HTML, CSS, and JavaScript.
 
 ***Features***
